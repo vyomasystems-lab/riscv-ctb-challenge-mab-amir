@@ -176,7 +176,7 @@ _start:                                                                 \
         j reset_vector;                                                 \
         .align 2;                                                       \
 trap_vector:                                                            \
-        /* test whether the test came from pass/fail */                 \
+        /* test whether the test came from pass */                 \
         csrr t5, mcause;                                                \
         li t6, CAUSE_USER_ECALL;                                        \
         beq t5, t6, write_tohost;                                       \
